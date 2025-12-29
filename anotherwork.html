@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>personal info</title>
+    <title>Personal Info</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.light {
+            background-color: white;
+            color: black;
+        }
+        body.dark {
+            background-color: #121212;
+            color: white;
+        }
+        button {
+            padding: 8px 12px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-<body>
+<body class="light">
+
+    <button onclick="toggleTheme()">Toggle Dark / Light Mode</button>
+
     <p id="personName"></p>
     <p id="personAge"></p>
     <p id="personHobby"></p>
 
-
     <script>
-        let name;
-        let age;
-        let hobby;
         document.getElementById('personName').textContent = 'Usman';
         document.getElementById('personAge').textContent = '1000 years old';
         document.getElementById('personHobby').textContent = 'Gaming';
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+            document.body.classList.toggle("light");
+        }
     </script>
 </body>
 </html>
